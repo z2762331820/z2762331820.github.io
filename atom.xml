@@ -3,11 +3,11 @@
   <title>Hexo</title>
   
   
-  <link href="https://z2762331820.github.io/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/atom.xml" rel="self"/>
   
-  <link href="https://z2762331820.github.io/"/>
+  <link href="http://yoursite.com/"/>
   <updated>2020-10-07T07:44:19.745Z</updated>
-  <id>https://z2762331820.github.io/</id>
+  <id>http://yoursite.com/</id>
   
   <author>
     <name>刘峥</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>NOTE</title>
-    <link href="https://z2762331820.github.io/2020/10/07/NOTE/"/>
-    <id>https://z2762331820.github.io/2020/10/07/NOTE/</id>
+    <link href="http://yoursite.com/2020/10/07/NOTE/"/>
+    <id>http://yoursite.com/2020/10/07/NOTE/</id>
     <published>2020-10-07T05:09:36.000Z</published>
     <updated>2020-10-07T07:44:19.745Z</updated>
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title></title>
-    <link href="https://z2762331820.github.io/2020/10/07/%E7%AC%94%E8%AE%B0%E4%B8%80/"/>
-    <id>https://z2762331820.github.io/2020/10/07/%E7%AC%94%E8%AE%B0%E4%B8%80/</id>
+    <link href="http://yoursite.com/2020/10/07/%E7%AC%94%E8%AE%B0%E4%B8%80/"/>
+    <id>http://yoursite.com/2020/10/07/%E7%AC%94%E8%AE%B0%E4%B8%80/</id>
     <published>2020-10-07T02:29:33.000Z</published>
     <updated>2020-10-07T04:36:59.997Z</updated>
     
@@ -52,8 +52,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://z2762331820.github.io/2020/10/06/hello-world/"/>
-    <id>https://z2762331820.github.io/2020/10/06/hello-world/</id>
+    <link href="http://yoursite.com/2020/10/06/hello-world/"/>
+    <id>http://yoursite.com/2020/10/06/hello-world/</id>
     <published>2020-10-06T08:07:10.988Z</published>
     <updated>2020-10-06T08:07:10.988Z</updated>
     
