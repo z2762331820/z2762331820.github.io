@@ -3,33 +3,34 @@
   <title>Hexo</title>
   
   
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
+  <link href="https://z2762331820.github.io/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2020-10-07T07:44:19.745Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="https://z2762331820.github.io/"/>
+  <updated>2020-10-19T09:27:09.288Z</updated>
+  <id>https://z2762331820.github.io/</id>
   
   <author>
-    <name>刘峥</name>
+    <name>Dynamite boom</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>NOTE</title>
-    <link href="http://yoursite.com/2020/10/07/NOTE/"/>
-    <id>http://yoursite.com/2020/10/07/NOTE/</id>
-    <published>2020-10-07T05:09:36.000Z</published>
-    <updated>2020-10-07T07:44:19.745Z</updated>
+    <title></title>
+    <link href="https://z2762331820.github.io/2020/10/07/NOTE/"/>
+    <id>https://z2762331820.github.io/2020/10/07/NOTE/</id>
+    <published>2020-10-07T05:09:36.163Z</published>
+    <updated>2020-10-19T09:27:09.288Z</updated>
     
-    <content type="html"><![CDATA[<p>qwq��qaq</p>]]></content>
+    <content type="html"><![CDATA[<hr><p>title: PHP基本语法<br>date: 2020-10-07 13:09:36<br>tags:</p><h1 id="—基础PHP语法"><a href="#—基础PHP语法" class="headerlink" title="—基础PHP语法"></a>—基础PHP语法</h1><p>PHP脚本可放置于文档中的任何位置</p><p>PHP脚本以<?php开头，以?>结尾</p><p>如下</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//此处为代码</span></span><br><span class="line"><span class="meta">?&gt;</span>    </span><br></pre></td></tr></table></figure><p>PHP 文件的默认文件扩展名是 “.php”。</p><p>PHP 文件通常包含 HTML 标签以及一些 PHP 脚本代码</p><p><strong>echo</strong>可以打印信息，类似于printf</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;Hello world&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p><strong>实例</strong></p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;我的第一张 PHP 页面&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;Hello World!&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><p>![屏幕截图 2020-10-19 170926](C:\Users\86152\Desktop\屏幕截图 2020-10-19 170926.png)</p><p><strong>指令分隔符</strong></p><p>PHP 需要在每个语句后用分号结束指令。一段 PHP   代码中的结束标记隐含表示了一个分号；在一个 PHP   代码段中的最后一行可以不用分号结束。如果后面还有新行，则代码段的结束标记包含了行结束。   </p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;This is a test&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">echo</span> <span class="string">&quot;This is a test&quot;</span> <span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">echo</span> <span class="string">&#x27;We omitted the last closing tag&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>文件末尾的 PHP 代码段结束标记可以不要，有些情况下当使用     <a href="https://www.php.net/manual/zh/function.include.php">include</a> 或者 <a href="https://www.php.net/manual/zh/function.require.php">require</a>     时省略掉会更好些，这样不期望的空白符就不会出现在文件末尾，之后仍然可以输出响应标头。在使用输出缓冲时也很便利，就不会看到由包含文件生成的不期望的空白符。    </p><p><strong>PHP中的注释</strong></p><p>PHP 代码中的注释不会被作为程序来读取和执行。它唯一的作用是供代码编辑者阅读。</p><p>PHP支持三种注释</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// 这是单行注释</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 这也是单行注释</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">这是多行注释块</span></span><br><span class="line"><span class="comment">它横跨了</span></span><br><span class="line"><span class="comment">多行</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p><strong>PHP变量规则</strong></p><ul><li>变量以 $ 符号开头，其后是变量的名称</li><li>变量名称必须以字母或下划线开头</li><li>变量名称不能以数字开头</li><li>变量名称只能包含字母数字字符和下划线（A-z、0-9 以及  _）</li><li><strong>变量名称对大小写敏感</strong>（$y 与 $Y 是两个不同的变量）</li></ul><p><strong>实例创建PHP变量</strong></p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$x=<span class="number">5</span>;</span><br><span class="line">$y=<span class="number">6</span>;</span><br><span class="line">$z=$x+$y;</span><br><span class="line"><span class="keyword">echo</span> $z;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;qwq��qaq&lt;/p&gt;
-</summary>
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;title: PHP基本语法&lt;br&gt;date: 2020-10-07 13:09:36&lt;br&gt;tags:&lt;/p&gt;
+&lt;h1 id=&quot;—基础PHP语法&quot;&gt;&lt;a href=&quot;#—基础PHP语法&quot; class=&quot;headerlink&quot; title=&quot;—基础PHP语法&quot;&gt;&lt;</summary>
       
     
     
@@ -39,11 +40,19 @@
   
   <entry>
     <title></title>
-    <link href="http://yoursite.com/2020/10/07/%E7%AC%94%E8%AE%B0%E4%B8%80/"/>
-    <id>http://yoursite.com/2020/10/07/%E7%AC%94%E8%AE%B0%E4%B8%80/</id>
+    <link href="https://z2762331820.github.io/2020/10/07/%E7%AC%94%E8%AE%B0%E4%B8%80/"/>
+    <id>https://z2762331820.github.io/2020/10/07/%E7%AC%94%E8%AE%B0%E4%B8%80/</id>
     <published>2020-10-07T02:29:33.000Z</published>
-    <updated>2020-10-07T04:36:59.997Z</updated>
+    <updated>2020-10-18T02:21:51.631Z</updated>
     
+    <content type="html"><![CDATA[<p>=-=</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;=-=&lt;/p&gt;
+</summary>
+      
     
     
     
@@ -52,8 +61,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2020/10/06/hello-world/"/>
-    <id>http://yoursite.com/2020/10/06/hello-world/</id>
+    <link href="https://z2762331820.github.io/2020/10/06/hello-world/"/>
+    <id>https://z2762331820.github.io/2020/10/06/hello-world/</id>
     <published>2020-10-06T08:07:10.988Z</published>
     <updated>2020-10-06T08:07:10.988Z</updated>
     
